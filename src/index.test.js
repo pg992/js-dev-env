@@ -8,12 +8,12 @@ describe('Our first test', () => {
 });
 
 describe('index.html', () => {
-  it('should say hello', (done) => {
+  it('should say h1 that says Users', (done) => {
       JSDOM.fromFile('./src/index.html').catch(function(err) {
         console.error("Error apears: " + err); // eslint-disable-line no-console
       }).then(dom => {
         const h1 = dom.window.document.getElementsByTagName('h1')[0];
-        expect(h1.innerHTML).to.equal("Hello World?");
+        expect(h1.innerHTML).to.equal("Users");
         done();
       });
   });
